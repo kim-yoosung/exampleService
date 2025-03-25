@@ -1,0 +1,35 @@
+[Agent] [Agent] >>> 로깅 시작
+[Agent] [Agent] WiremockDTO 로그:
+{
+  "request" : {
+    "method" : "GET",
+    "uriPattern" : "http://localhost:8080/v3/api-docs/swagger-config",
+    "headers" : {
+      "sec-fetch-mode" : "cors",
+      "referer" : "http://localhost:8080/swagger-ui/index.html",
+      "sec-fetch-site" : "same-origin",
+      "accept-language" : "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+      "cookie" : "screenResolution=1512x982",
+      "accept" : "*/*",
+      "sec-ch-ua" : "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\"",
+      "sec-ch-ua-mobile" : "?0",
+      "sec-ch-ua-platform" : "\"macOS\"",
+      "host" : "localhost:8080",
+      "connection" : "keep-alive",
+      "accept-encoding" : "gzip, deflate, br, zstd",
+      "Content-Type" : "application/json",
+      "user-agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+      "sec-fetch-dest" : "empty"
+    },
+    "body" : [ {
+      "equalToJson" : ""
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "",
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  }
+}
