@@ -29,7 +29,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/wow")
+    @GetMapping("/id")
     public Optional<User> getUsers(@RequestParam(value = "id", required = false) Long id) {
         if (id != null) {
             return userService.getUsersByID(id);
