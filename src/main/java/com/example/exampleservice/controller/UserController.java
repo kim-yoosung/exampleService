@@ -2,10 +2,10 @@ package com.example.exampleservice.controller;
 
 import com.example.exampleservice.entity.User;
 import com.example.exampleservice.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -30,9 +30,9 @@ public class UserController {
     }
 
     @GetMapping("/wow")
-    public User getUsers(@RequestParam(value = "name", required = false) String name) {
-        if (name != null && !name.isEmpty()) {
-            return userService.getUsersByName(name);
+    public Optional<User> getUsers(@RequestParam(value = "id", required = false) Long id) {
+        if (id != null) {
+            return userService.getUsersByID(id);
         } else {
             System.out.println("wow");
             return null;

@@ -5,6 +5,7 @@ import com.example.exampleservice.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -26,7 +27,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User getUsersByName(String name) {
-        return userRepository.findByName(name);
+    public Optional<User> getUsersByID(Long id) {
+        return userRepository.findById(id);
     }
 }
