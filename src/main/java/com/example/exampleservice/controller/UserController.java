@@ -28,4 +28,14 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @GetMapping("/wow")
+    public User getUsers(@RequestParam(value = "name", required = false) String name) {
+        if (name != null && !name.isEmpty()) {
+            return userService.getUsersByName(name);
+        } else {
+            System.out.println("wow");
+            return null;
+        }
+    }
 }
