@@ -30,4 +30,24 @@ public class UserService {
     public Optional<User> getUsersByID(Long id) {
         return userRepository.findById(id);
     }
+
+    public User updateUser(User userDetails) {
+        Long id = userDetails.getId();
+
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        user.setName(userDetails.getName());
+
+        return userRepository.save(user);
+    }
+
+    public boolean deleteUser(Long id) {
+        if (userRepository.existsById(id)) {
+            userRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

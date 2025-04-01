@@ -2,6 +2,7 @@ package com.example.exampleservice.controller;
 
 import com.example.exampleservice.entity.User;
 import com.example.exampleservice.service.UserService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +37,22 @@ public class UserController {
         } else {
             System.out.println("wow");
             return null;
+        }
+    }
+
+    @PutMapping
+    public User updateUser(@RequestBody User user) {
+        return userService.updateUser(user);
+    }
+
+    // 사용자 삭제 (DELETE /users/{id})
+    @DeleteMapping("/id")
+    public ResponseEntity<Void> deleteUser(@RequestParam(value = "id") Long id) {
+        boolean deleted = userService.deleteUser(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 }
