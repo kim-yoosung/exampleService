@@ -1,6 +1,9 @@
 com/example/exampleservice/ExampleServiceApplication.class
 com/example/exampleservice/controller/UserController.class
 com/example/exampleservice/entity/User.class
+com/example/exampleservice/config/BlobFileReader.class
 com/example/exampleservice/service/UserService.class
+com/example/exampleservice/config/LoggingInterceptor.class
 com/example/exampleservice/repository/UserRepository.class
+com/example/exampleservice/config/RestTemplateConfig.class
 com/example/exampleservice/filter/GlobalFilter.class
