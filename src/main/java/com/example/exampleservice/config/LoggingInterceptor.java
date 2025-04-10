@@ -15,12 +15,12 @@ public class LoggingInterceptor implements ClientHttpRequestInterceptor {
             ClientHttpRequestExecution execution) throws IOException {
 
         // 요청 정보 로깅
+        System.out.println("[DEBUG] request class: " + request.getClass());
         System.out.println("➡️ [MSA-A 요청]");
         System.out.println("URI: " + request.getURI());
         System.out.println("Method: " + request.getMethod());
         System.out.println("Headers: " + request.getHeaders());
         System.out.println("Body: " + new String(body, StandardCharsets.UTF_8));
-        System.out.println("[DEBUG] request class: " + request.getClass());
         ClientHttpResponse response = execution.execute(request, body);
 
         // 응답 정보 로깅
