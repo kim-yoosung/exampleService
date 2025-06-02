@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.15</version> <!-- ✅ 안정적인 최신 1.x 버전 -->
+            <version>1.6.15</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

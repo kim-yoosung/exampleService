@@ -1,6 +1,7 @@
 package com.example.exampleservice.controller;
 
 import com.example.exampleservice.entity.User;
+import com.example.exampleservice.exception.BizException;
 import com.example.exampleservice.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -75,5 +76,15 @@ public class UserController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/test/biz-exception")
+    public ResponseEntity<String> testBizException() {
+        throw new BizException("비즈니스 예외가 발생했습니다.");
+    }
+
+    @GetMapping("/test/general-exception")
+    public ResponseEntity<String> testGeneralException() {
+        throw new RuntimeException("일반 예외가 발생했습니다.");
     }
 }
